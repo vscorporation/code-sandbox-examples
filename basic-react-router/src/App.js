@@ -1,56 +1,34 @@
 import React from 'react';
 import { MemoryRouter, Switch, Route } from 'react-router-dom';
 
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
-import { LinkContainer } from 'react-router-bootstrap';
+import Container  from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 import './App.css';
 
-const Home = () => <span>Home</span>;
-
-const About = () => <span>About</span>;
-
-const Users = () => <span>Users</span>;
-
 const App = () => (
-  <MemoryRouter>
-    <Container className="p-3">
-      <Jumbotron>
-        <h1 className="header">Welcome To React-Bootstrap</h1>
-        <h2>
-          Current Page is{' '}
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/users">
-              <Users />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </h2>
-        <h2>
-          Navigate to{' '}
-          <ButtonToolbar className="custom-btn-toolbar">
-            <LinkContainer to="/">
-              <Button>Home</Button>
-            </LinkContainer>
-            <LinkContainer to="/about">
-              <Button>About</Button>
-            </LinkContainer>
-            <LinkContainer to="/users">
-              <Button>Users</Button>
-            </LinkContainer>
-          </ButtonToolbar>
-        </h2>
-      </Jumbotron>
-    </Container>
-  </MemoryRouter>
+  
+
+<Container className="wrapper">
+<Row>
+    <Col className="cell" lg={8}>sm=8</Col>
+    <Col className="cell" lg={4}>sm=4</Col>
+  </Row>
+  <Row>
+    <Col className="cell">
+      <div>cacas</div>
+    </Col>
+    <Col className="cell" xs={6}>2 of 3 (wider)</Col>
+    <Col className="cell">3 of 3</Col>
+    <Col className="cell">3 of 3</Col>
+  </Row>
+  <Row>
+    <Col className="cell">1 of 3</Col>
+    <Col className="cell" xs={5}>2 of 3 (wider)</Col>
+    <Col className="cell">3 of 3</Col>
+  </Row>
+</Container>
 );
 
 export default App;
