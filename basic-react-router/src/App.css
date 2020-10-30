@@ -17,3 +17,11 @@
 .wrapper .cell{
   border: 1px solid black;
 }
+
+.jumbotron{
+  margin-bottom: 0!important;
+}
+
+footer{
+  padding-top: 3rem;
+}

@@ -1,34 +1,32 @@
 import React from 'react';
-import { MemoryRouter, Switch, Route } from 'react-router-dom';
 
-import Container  from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './layouts/home';
+import PageNotFound from './layouts/page-not-found';
+import ArticlePage from './layouts/article-page';
+
 
 import './App.css';
 
 const App = () => (
-  
-
-<Container className="wrapper">
-<Row>
-    <Col className="cell" lg={8}>sm=8</Col>
-    <Col className="cell" lg={4}>sm=4</Col>
-  </Row>
-  <Row>
-    <Col className="cell">
-      <div>cacas</div>
-    </Col>
-    <Col className="cell" xs={6}>2 of 3 (wider)</Col>
-    <Col className="cell">3 of 3</Col>
-    <Col className="cell">3 of 3</Col>
-  </Row>
-  <Row>
-    <Col className="cell">1 of 3</Col>
-    <Col className="cell" xs={5}>2 of 3 (wider)</Col>
-    <Col className="cell">3 of 3</Col>
-  </Row>
-</Container>
+  <Router>
+    <Switch>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route exact path="/article-page.html">
+        <ArticlePage />
+      </Route>
+      <Route exact path="*">
+        <PageNotFound />
+      </Route>
+    </Switch>
+  </Router>
 );
 
 export default App;
